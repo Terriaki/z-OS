@@ -1,0 +1,17 @@
+//JOBNAME JOB (MISY,SXX,T870270),'name',NOTIFY=&SYSUID,       
+//         CLASS=D,MSGCLASS=X,MSGLEVEL=(1,1)                    
+/*JOBPARM  S=sysname                                               
+//**************************************************************
+//*  GENERATE CERTERTIFICATE REQUEST - PRIVATE KEY                              
+//**************************************************************
+//STEP1    EXEC PGM=IKJEFT01                                    
+//SYSTSPRT DD SYSOUT=*                                          
+//SYSTSIN  DD *                                                 
+RACDCERT ID(CDIRECT) GENCERT -                                 
+SUBJECTSDN(CN('HOSTNAME.OF.SERVER.COM:PORTORAPP') -              
+C('CZ') OU('Connectivity') O('Personal') -             
+L('Brno') -                                               
+SP('JMK')) -                                                
+SIZE (4096) -                                                  
+WITHLABEL('labelname')                                     
+/*                                                              

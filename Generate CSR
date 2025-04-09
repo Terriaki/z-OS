@@ -1,0 +1,12 @@
+//JOB2 JOB (MISY,SXX,T870270),'name',NOTIFY=&SYSUID,       
+//         CLASS=D,MSGCLASS=X,MSGLEVEL=(1,1)                    
+/*JOBPARM  S=sysname                                                 
+//*************************************************************
+//*  CSR GENERATION                                                       
+//*************************************************************
+//STEP1    EXEC PGM=IKJEFT01                                   
+//SYSTSPRT DD SYSOUT=*                                         
+//SYSTSIN  DD *                                                
+  RACDCERT ID(CDIRECT) GENREQ(LABEL('samelabel')) -        
+  DSN('WHERE.TO.SAVE.CSR.DATASET')                      
+/*
