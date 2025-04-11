@@ -1,4 +1,5 @@
-Certificate Generation on z/OS
+Certificate Generation and renewal process on z/OS
+
 This document outlines the process for generating a new digital certificate on IBM z/OS using RACF or an equivalent security product. These steps include certificate and key generation, CSR creation, optional keyring setup, and importing the signed certificate.
 
 Steps:
@@ -15,6 +16,6 @@ Now link the certificate and any CA certificates to the keyring.
 
 Notes:
 If you are renewing an old certificate, note it's DEFAULT status keyring.
-Product using this certificate might require to be pointed to it, either directly in the application, or in AT-TLS Pagent config. Refer to the application and your installation specifics.
+Product using this new certificate might require to be pointed to the new label, either directly in the application, or in AT-TLS Pagent config. Refer to the application and your installation specifics.
 
-Example jobs use IKJEFT01 program to issue RACF TSO commands 
+Examples are jobs using IKJEFT01 program to issue RACF TSO commands 
